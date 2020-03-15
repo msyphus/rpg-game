@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/gatoBg.jpg");
+    background-size: cover;
+}
+
+header {
+    width: 100%;
+    background-color: rgba(0,0,0,0.80);
+    font-size: 3rem;
+    text-align: right;
+    color: red;
+    padding: 1% 2%;
+}
+
+h1, h2{
+    font-family: 'Shojumaru', cursive;
+}
+
+.characterCard {
+    font-family: 'Acme', sans-serif;
+}
+
+p {
+    font-family: 'Yeon Sung', cursive;
+}
+
+button {
+    font-family: 'Shojumaru', cursive;
+}
