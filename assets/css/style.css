@@ -16,13 +16,53 @@ header {
     padding: 1% 2%;
 }
 
-h1, h2{
+h1 {
     font-family: 'Shojumaru', cursive;
+    color: red;
 }
 
-#user {
-    margin: 2% 2% 1%;
+h2{
+    background-color: rgba(0,0,0,0.80);
+    font-family: 'Shojumaru', cursive;
+    color: red;
+    margin: 1%;
+    padding: 1%;
+}
+
+p {
+    font-family: 'Yeon Sung', cursive;
+}
+
+.characterTitles {
+    margin:1% 0;
+}
+
+.userTitle {
+    float: left;
+    display:inline;
+    width: 50%;
     font-size: 1.5rem;
+    text-align: center;
+}
+
+.challengerTitle {
+    float: right;
+    display:inline;
+    width: 50%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.userWindow {
+    width: 45%;
+    float: left;
+    margin: auto;
+}
+
+.challengerWindow {
+    width: 45%;
+    float: right;
+    margin: auto;
 }
 
 .characterCard {
@@ -30,7 +70,7 @@ h1, h2{
     width: 400px;
     height: 200px;
     background-color: rgba(0,0,0,0.80);
-    margin: 1% 2%;
+    margin: 1% auto;
 }
 
 .characterNameSpace {
@@ -49,7 +89,7 @@ h1, h2{
 .characterImg {
     position: absolute;
     width: 40%;
-    height: auto;
+    height: 75%;
     float: left;
     margin-left: 5%;
 }
@@ -61,10 +101,37 @@ h1, h2{
     color: red;
 }
 
-p {
-    font-family: 'Yeon Sung', cursive;
+.fightScene {
+    width: 10%;
+    height: 200px;
+    display: inline-block;
+    text-align: center;
+    margin: 0.5% 0;
+    background-color: rgba(0,0,0,0.80);
 }
 
 button {
     font-family: 'Shojumaru', cursive;
 }
+
+.opponentTitle {
+    clear: both;
+    text-align: center;
+}
+
+.opponentLineUp {
+    width: 100%;
+    margin: auto;
+    clear: both;
+}
+
+.opponentCard {
+    display: inline;
+    float: left;
+    position: relative;
+    width: 400px;
+    height: 200px;
+    background-color: rgba(0,0,0,0.80);
+    margin: 0.5%;
+}
+

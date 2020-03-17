@@ -14,14 +14,91 @@
         <h1>Martial Arts Mashup RPG</h1>
     </header>
     
+    <section class="characterTitles">
+        <div class="userTitle">
+        <h2 style="text-align:center;">Your Character: </h2>
+        </div>
+        <div class="challengerTitle">
+        <h2 style="text-align:center;">Challenger: </h2>
+        </div>
+    </section>
+    
     <section>
-        <h2 id="user">Your Character: </h2>
-        <div class="characterCard">
-            <div class="characterNameSpace">
-                <h4 class="characterName">Gato</h4>
+        <div class="userWindow">
+            <div class="characterCard">
+                <div class="characterNameSpace">
+                    <h4 class="characterName">Gato</h4>
+                </div>
+                <img class="characterImg" src="assets/images/gato.JPG" alt="User Character">
+                <p class="characterQuote">Welcome to my jungle; <br> I've got fun and games!</p>
+                <br><br><br><br>
+                <p id="userHealth">Health Points: </p>
+                <br>
+                <p id="userAttack">Attack Points: </p>
+                <br>
+                <p id="userCntAttack">Counter Attack Points: </p>
             </div>
-            <img class="characterImg" src="assets/images/gato.JPG" alt="User Character">
-            <p class="characterQuote">Welcome to my jungle; <br> I've got fun and games!</p>
+        </div>
+        
+        <div class="fightScene">
+            <button id="attack">Attack</button>
+            <p id="fight-info"></p>
+        </div>
+
+        <div class="challengerWindow">
+            <div class="characterCard">
+                <div class="characterNameSpace">
+                    <h4 class="characterName">Rock</h4>
+                </div>
+                <img class="characterImg" src="assets/images/karate.jpg" alt="User Character">
+                <p class="characterQuote">Seriously?! Do I look like a guy you'd want to mess with?</p>
+                <br><br><br><br>
+                <p id="userHealth">Health Points: </p>
+                <br>
+                <p id="userAttack">Attack Points: </p>
+                <br>
+                <p id="userCntAttack">Counter Attack Points: </p>
+            </div>
+        </div>
+    </section>
+       
+    <section class="opponentTitle">
+        <h2>Opponents:</h2>
+    </section>
+
+    <section class ="opponentLineUp">
+        <div class="opponentCard">
+            <div class="characterNameSpace">
+                <h4 class="characterName">Kamaitachi</h4>
+            </div>
+            <img class="characterImg" src="assets/images/ninja.jpg" alt="User Character">
+            <p class="characterQuote">Did you see that?...No? <br> ...My point exactly!</p>
+            <br><br><br><br>
+            <p id="userHealth">Health Points: </p>
+            <br>
+            <p id="userAttack">Attack Points: </p>
+            <br>
+            <p id="userCntAttack">Counter Attack Points: </p>
+        </div>
+        <div class="opponentCard">
+            <div class="characterNameSpace">
+                <h4 class="characterName">Crane</h4>
+            </div>
+            <img class="characterImg" src="assets/images/crane.jpg" alt="User Character">
+            <p class="characterQuote">Forget the Karate Kid, <br> I invented the crane kick!</p>
+            <br><br><br><br>
+            <p id="userHealth">Health Points: </p>
+            <br>
+            <p id="userAttack">Attack Points: </p>
+            <br>
+            <p id="userCntAttack">Counter Attack Points: </p>
+        </div>
+        <div class="opponentCard">
+            <div class="characterNameSpace">
+                <h4 class="characterName">Rock</h4>
+            </div>
+            <img class="characterImg" src="assets/images/karate.jpg" alt="User Character">
+            <p class="characterQuote">Seriously?! Do I look like a guy you'd want to mess with?</p>
             <br><br><br><br>
             <p id="userHealth">Health Points: </p>
             <br>
@@ -30,19 +107,5 @@
             <p id="userCntAttack">Counter Attack Points: </p>
         </div>
     </section>
-    
-    <section>
-        <button id="attack">Attack</button>
-        <p id="fight-info"></p>
-    </section>
-    
-    <section>
-        <h2 id="challenger">Challenger: </h2>
-    </section>
-    
-    <section>
-        <h2 id="opponents">Opponents:</h2>
-    </section>
-    
 </body>
 </html>
