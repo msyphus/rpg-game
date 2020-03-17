@@ -78,7 +78,7 @@ p {
     height: 20%;
 }
 
-.characterName {
+#userChar, #chalChar {
     font-family: 'Acme', sans-serif;
     font-size: 1.5em;
     color: red;
@@ -86,7 +86,7 @@ p {
     padding-top: 5%;
 }
 
-.characterImg {
+#userImg, #chalImg {
     position: absolute;
     width: 40%;
     height: 75%;
@@ -94,7 +94,7 @@ p {
     margin-left: 5%;
 }
 
-.characterQuote, #userHealth, #userAttack, #userCntAttack {
+.#userQuote, #userHealth, #userFightInfo, #chalQuote, #chalHealth, #chalFightInfo {
     width: 50%;
     float: right;
     font-family: 'Acme', sans-serif;
@@ -126,12 +126,27 @@ button {
 }
 
 .opponentCard {
+    position: relative;
     display: inline;
     float: left;
     position: relative;
-    width: 400px;
+    width: 200px;
     height: 200px;
     background-color: rgba(0,0,0,0.80);
     margin: 0.5%;
+}
+
+#kamaName, #craneName, #rockName, #gatoName {
+    font-family: 'Acme', sans-serif;
+    font-size: 1.5em;
+    color: red;
+    text-align: center;
+    padding-top: 5%;
+}
+
+#kamaImg, #craneImg, #rockImg, #gatoImg {
+    position: absolute;
+    width: 80%;
+    height: 75%;
 }
 
