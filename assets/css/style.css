@@ -20,8 +20,45 @@ h1, h2{
     font-family: 'Shojumaru', cursive;
 }
 
+#user {
+    margin: 2% 2% 1%;
+    font-size: 1.5rem;
+}
+
 .characterCard {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    background-color: rgba(0,0,0,0.80);
+    margin: 1% 2%;
+}
+
+.characterNameSpace {
+    width: 50%;
+    height: 20%;
+}
+
+.characterName {
     font-family: 'Acme', sans-serif;
+    font-size: 1.5em;
+    color: red;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.characterImg {
+    position: absolute;
+    width: 40%;
+    height: auto;
+    float: left;
+    margin-left: 5%;
+}
+
+.characterQuote, #userHealth, #userAttack, #userCntAttack {
+    width: 50%;
+    float: right;
+    font-family: 'Acme', sans-serif;
+    color: red;
 }
 
 p {
