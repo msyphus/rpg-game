@@ -66,6 +66,8 @@ $(document).ready(function() {
         $("#userQuote").text(playerObj.quote);
         $("#userHealth").text(`Health: ${playerObj.health}`);
         userChosen = true;
+        $(this).click(false); //disable clicking on what has been selected
+        $(this).attr("class","disabled");
     } else {
         cpu = event.currentTarget.attributes.value.value;
         if(cpu === "kama") {
@@ -90,8 +92,6 @@ $(document).ready(function() {
     
 })
 
-//All character displayed in opponentLineUp
-//Choose character by clicking picture
 //Chosen character hidden from opponentLineUp, displays in userWindow
 //Choose opponent by clicking picture, opponent hidden from lineup and displays in challengerWindow
 

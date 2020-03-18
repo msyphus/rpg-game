@@ -101,6 +101,18 @@ p {
     color: red;
 }
 
+.disabled {
+    position: relative;
+    display: inline;
+    float: left;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0,0,0,0.80);
+    margin: 0.5%;
+    opacity: 30%;
+}
+
 .fightScene {
     width: 10%;
     height: 200px;
