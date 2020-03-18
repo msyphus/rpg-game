@@ -48,6 +48,7 @@ var cpuChosen = false;
 $(document).ready(function() {
     $(this).on("click", ".opponentCard", function(event) {
         if(userChosen === false) {
+        
         player = event.currentTarget.attributes.value.value;
         if(player === "kama") {
             playerObj = kama;
@@ -87,8 +88,21 @@ $(document).ready(function() {
         $("#chalQuote").text(cpuObj.quote);
         $("#chalHealth").text(`Health: ${cpuObj.health}`);
         cpuChosen = true;
+        console.log(cpuChosen);
     }
-    })
+    });
+
+    function newGame() {
+        if(cpuChosen === true) {
+            $(".opponentCard").click(false);
+            $("#attack").show();
+            $("#startGame").hide();
+        }
+    }
+
+    $("#startGame").click(function(){
+        newGame();
+    });
     
 })
 

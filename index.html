@@ -43,7 +43,9 @@
         </div>
         
         <div class="fightScene">
-            <button id="attack">Attack</button> <!--center vertically, too.  remove black background-->
+            <button id="attack">Attack</button> <!--center vertically, too.  remove black background, only show during fighting-->
+            <br><br>
+            <button id="startGame">Fight</button> <!--only show during selection-->
         </div>
 
         <div class="challengerWindow">
@@ -96,7 +98,10 @@
             <p id="gatoHealth">Health Points: </p>
         </div>
     </section>
-
     <script src="assets/javascript/game.js"></script>
+    <script>
+        $("#attack").hide();
+    </script>
+    
 </body>
 </html>
