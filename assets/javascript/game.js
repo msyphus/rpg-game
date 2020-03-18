@@ -42,9 +42,12 @@ var player = "";
 var cpu = "";
 var playerObj;
 var cpuObj;
+var userChosen = false;
+var cpuChosen = false;
 
 $(document).ready(function() {
     $(this).on("click", ".opponentCard", function(event) {
+        if(userChosen === false) {
         player = event.currentTarget.attributes.value.value;
         if(player === "kama") {
             playerObj = kama;
@@ -62,6 +65,27 @@ $(document).ready(function() {
         $("#userImg").attr("src", playerObj.image);
         $("#userQuote").text(playerObj.quote);
         $("#userHealth").text(`Health: ${playerObj.health}`);
+        userChosen = true;
+    } else {
+        cpu = event.currentTarget.attributes.value.value;
+        if(cpu === "kama") {
+            cpuObj = kama;
+        }
+        if(cpu === "crane") {
+            cpuObj = crane;
+        }
+        if(cpu  === "rock") {
+            cpuObj = rock;
+        }
+        if(cpu === "gato") {
+            cpuObj = gato;
+        }
+        $("#chalChar").text(cpuObj.name);
+        $("#chalImg").attr("src", cpuObj.image);
+        $("#chalQuote").text(cpuObj.quote);
+        $("#chalHealth").text(`Health: ${cpuObj.health}`);
+        cpuChosen = true;
+    }
     })
     
 })
