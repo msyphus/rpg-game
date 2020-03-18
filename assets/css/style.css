@@ -94,7 +94,7 @@ p {
     margin-left: 5%;
 }
 
-.#userQuote, #userHealth, #userFightInfo, #chalQuote, #chalHealth, #chalFightInfo {
+#userQuote, #userHealth, #userFightInfo, #chalQuote, #chalHealth, #chalFightInfo {
     width: 50%;
     float: right;
     font-family: 'Acme', sans-serif;

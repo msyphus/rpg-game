@@ -1,5 +1,6 @@
 var gato = {
     name: "Gato",
+    image: "assets/images/gato.JPG",
     health: 120,
     attack: 10,
     counter: 15,
@@ -9,6 +10,7 @@ var gato = {
 
 var rock = {
     name: "Rock Norris",
+    image: "assets/images/karate.jpg",
     health: 130,
     attack: 15,
     counter: 20,
@@ -18,6 +20,7 @@ var rock = {
 
 var crane = {
     name: "Crane",
+    image: "assets/images/crane.jpg",
     health: 150,
     attack: 25,
     counter: 25,
@@ -27,12 +30,41 @@ var crane = {
 
 var kama = {
     name: "Kamaitachi",
+    image: "assets/images/ninja.jpg",
     health: 100,
     attack: 6,
     counter: 10,
     quote: "Did you see that?...No?...My point exactly!",
     attackQuote: "Ippon!"
 }
+
+var player = "";
+var cpu = "";
+var playerObj;
+var cpuObj;
+
+$(document).ready(function() {
+    $(this).on("click", ".opponentCard", function(event) {
+        player = event.currentTarget.attributes.value.value;
+        if(player === "kama") {
+            playerObj = kama;
+        }
+        if(player === "crane") {
+            playerObj = crane;
+        }
+        if(player === "rock") {
+            playerObj = rock;
+        }
+        if(player === "gato") {
+            playerObj = gato;
+        }
+        $("#userChar").text(playerObj.name);
+        $("#userImg").attr("src", playerObj.image);
+        $("#userQuote").text(playerObj.quote);
+        $("#userHealth").text(`Health: ${playerObj.health}`);
+    })
+    
+})
 
 //All character displayed in opponentLineUp
 //Choose character by clicking picture
