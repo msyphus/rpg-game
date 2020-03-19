@@ -97,6 +97,7 @@ $(document).ready(function() {
             $(".opponentCard").click(false);
             $("#attack").show();
             $("#startGame").hide();
+
         }
     };
 
@@ -112,6 +113,19 @@ $(document).ready(function() {
         cpuObj.health -= playerObj.attack;
         console.log(cpuObj.health);
         $("#chalHealth").text(`Health: ${cpuObj.health}`);
+        if(playerObj.health <= 0) {
+            $("#attack").hide();
+            $("#startGame").show();
+            $("#userFightInfo").text("You Lose!");
+            $("#chalFightInfo").text("Champion!");
+            
+        }
+        if(cpuObj.health <= 0) {
+            $("#attack").hide();
+            $("#startGame").show();
+            $("#userFightInfo").text("You Win!");
+            $("#chalFightInfo").text("Vanquished!");
+        }
     };
 
     $("#attack").click(function() {
@@ -119,7 +133,6 @@ $(document).ready(function() {
     });
 })
 
-//Chosen character hidden from opponentLineUp, displays in userWindow
 //Choose opponent by clicking picture, opponent hidden from lineup and displays in challengerWindow
 
 //Click attack button = user damages challenger (challenger loses health points).  Update points display and fight dialogue
