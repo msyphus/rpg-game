@@ -98,12 +98,25 @@ $(document).ready(function() {
             $("#attack").show();
             $("#startGame").hide();
         }
-    }
+    };
 
     $("#startGame").click(function(){
         newGame();
     });
     
+    function fight() {
+        console.log("buttonWorking");
+        playerObj.health -= cpuObj.counter;
+        console.log(playerObj.health);
+        $("#userHealth").text(`Health: ${playerObj.health}`);
+        cpuObj.health -= playerObj.attack;
+        console.log(cpuObj.health);
+        $("#chalHealth").text(`Health: ${cpuObj.health}`);
+    };
+
+    $("#attack").click(function() {
+        fight();
+    });
 })
 
 //Chosen character hidden from opponentLineUp, displays in userWindow
