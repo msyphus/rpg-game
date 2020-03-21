@@ -48,6 +48,7 @@ var playerObj;
 var cpuObj;
 var userChosen = false;
 var cpuChosen = false;
+var charDead = [];
 
 $(document).ready(function() {
     $(this).on("click", ".opponentCard", function(event) {
@@ -92,7 +93,6 @@ $(document).ready(function() {
         $("#chalQuote").text(cpuObj.quote);
         $("#chalHealth").text(`Health: ${cpuObj.health}`);
         cpuChosen = true;
-        console.log(cpuChosen);
     }
     });
 
@@ -101,7 +101,6 @@ $(document).ready(function() {
             $(".opponentCard").click(false);
             $("#attack").show();
             $("#startGame").hide();
-
         }
     };
 
@@ -128,12 +127,29 @@ $(document).ready(function() {
             $("#startGame").show();
             $("#userFightInfo").text("You Win!");
             $("#chalFightInfo").text("Vanquished!");
+            charDead.push(cpu);
+            charDisable();
         }
     };
 
     $("#attack").click(function() {
         fight();
     });
+
+    function charDisable() {
+        if(charDead.includes("kama") === true) {
+            $("div[value|='kama']").attr("class", "disabled");
+        }
+        if(charDead.includes("crane") === true) {
+            $("div[value|='crane']").attr("class", "disabled");
+        }
+        if(charDead.includes("rock") === true) {
+            $("div[value|='rock']").attr("class", "disabled");
+        }
+        if(charDead.includes("gato") === true) {
+            $("div[value|='gato']").attr("class", "disabled");
+        }
+    }
 })
 
 //Choose opponent by clicking picture, opponent hidden from lineup and displays in challengerWindow
