@@ -119,7 +119,7 @@ $(document).ready(function() {
         playerObj.attack = playerObj.attack + playerObj.powerGain;
         if(playerObj.health <= 0) {
             $("#attack").hide();
-            $("#startGame").show();
+            $("#tryAgain").show();
             $("#userFightInfo").text("You Lose!");
             $("#chalFightInfo").text("Champion!");
         }
@@ -136,6 +136,15 @@ $(document).ready(function() {
 
     $("#attack").on("click", function() {
         fight();
+    });
+
+    function retry () {
+        $(".characterCard").empty();
+        $(".disabled").attr("class", "opponentCard");
+    }
+    
+    $("#tryAgain").on("click", function () {
+        retry();
     });
 
     function charDisable() {
