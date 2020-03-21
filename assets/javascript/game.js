@@ -72,7 +72,7 @@ $(document).ready(function() {
         $("#userQuote").text(playerObj.quote);
         $("#userHealth").text(`Health: ${playerObj.health}`);
         userChosen = true;
-        $(this).click(false); //disable clicking on what has been selected
+        $(this).on("click", false); //disable clicking on what has been selected
         $(this).attr("class","disabled");
     } else {
         cpu = event.currentTarget.attributes.value.value;
@@ -98,13 +98,13 @@ $(document).ready(function() {
 
     function newGame() {
         if(cpuChosen === true) {
-            $(".opponentCard").click(false);
+            $(".opponentCard").on("click", false);
             $("#attack").show();
             $("#startGame").hide();
         }
     };
 
-    $("#startGame").click(function(){
+    $("#startGame").on("click", function() {
         newGame();
     });
     
@@ -120,19 +120,19 @@ $(document).ready(function() {
             $("#startGame").show();
             $("#userFightInfo").text("You Lose!");
             $("#chalFightInfo").text("Champion!");
-            
         }
         if(cpuObj.health <= 0) {
             $("#attack").hide();
             $("#startGame").show();
-            $("#userFightInfo").text("You Win!");
+            $("#userFightInfo").append("You Win!" + "<br>" + "Select New Challenger");
             $("#chalFightInfo").text("Vanquished!");
             charDead.push(cpu);
             charDisable();
+            $(".opponentCard").off("click", false);
         }
     };
 
-    $("#attack").click(function() {
+    $("#attack").on("click", function() {
         fight();
     });
 
