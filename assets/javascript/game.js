@@ -92,6 +92,8 @@ $(document).ready(function() {
         $("#chalImg").attr("src", cpuObj.image);
         $("#chalQuote").text(cpuObj.quote);
         $("#chalHealth").text(`Health: ${cpuObj.health}`);
+        $("#userFightInfo").text("");
+        $("#chalFightInfo").text("");
         cpuChosen = true;
     }
     });
