@@ -3,6 +3,7 @@ var gato = {
     image: "assets/images/gato.JPG",
     health: 120,
     attack: 10,
+    powerGain: 10,
     counter: 15,
     quote: "Welcome to my jungle; I've got fun and games!",
     attackQuote: "Benção!"
@@ -13,6 +14,7 @@ var rock = {
     image: "assets/images/karate.jpg",
     health: 130,
     attack: 15,
+    powerGain: 15,
     counter: 20,
     quote: "Seriously?! Do I look like a guy you'd want to mess with?",
     attackQuote: "My dad is Chuck!"
@@ -23,6 +25,7 @@ var crane = {
     image: "assets/images/crane.jpg",
     health: 150,
     attack: 25,
+    powerGain: 25,
     counter: 25,
     quote: "Forget the Karate Kid, I invented the crane kick!",
     attackQuote: "I can beat you standing on one foot!"
@@ -33,6 +36,7 @@ var kama = {
     image: "assets/images/ninja.jpg",
     health: 100,
     attack: 6,
+    powerGain: 6,
     counter: 10,
     quote: "Did you see that?...No?...My point exactly!",
     attackQuote: "Ippon!"
@@ -106,13 +110,12 @@ $(document).ready(function() {
     });
     
     function fight() {
-        console.log("buttonWorking");
+        console.log(playerObj.attack);
         playerObj.health -= cpuObj.counter;
-        console.log(playerObj.health);
         $("#userHealth").text(`Health: ${playerObj.health}`);
         cpuObj.health -= playerObj.attack;
-        console.log(cpuObj.health);
         $("#chalHealth").text(`Health: ${cpuObj.health}`);
+        playerObj.attack = playerObj.attack + playerObj.powerGain;
         if(playerObj.health <= 0) {
             $("#attack").hide();
             $("#startGame").show();
