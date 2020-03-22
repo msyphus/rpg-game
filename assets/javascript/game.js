@@ -125,13 +125,20 @@ $(document).ready(function() {
             $("#chalFightInfo").text("Champion!");
         }
         if(cpuObj.health <= 0) {
-            $("#attack").hide();
-            $("#startGame").show();
-            $("#userFightInfo").append("You Win!" + "<br>" + "Select New Challenger");
-            $("#chalFightInfo").text("Vanquished!");
             charDead.push(cpu);
             charDisable();
-            $(".opponentCard").off("click", false);
+            if(charDead.length < 3) {
+                $("#attack").hide();
+                $("#startGame").show();
+                $("#userFightInfo").append("You Win!" + "<br>" + "Select New Challenger");
+                $("#chalFightInfo").text("Vanquished!");
+                $(".opponentCard").off("click", false);
+            } else {
+                $("#attack").hide();
+                $("#tryAgain").show();
+                $("#userFightInfo").append("You are the Grand Champion!" + "<br>" + "Fight Again!")
+                $("#chalFightInfo").text("Vanquished!");
+            }
         }
     };
 
