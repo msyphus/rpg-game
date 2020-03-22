@@ -139,8 +139,9 @@ $(document).ready(function() {
     });
 
     function retry () {
-        $(".characterCard").empty();
-        $(".disabled").attr("class", "opponentCard");
+        location.reload(true);
+        //$(".characterCard").empty();
+        //$(".disabled").attr("class", "opponentCard");
     }
     
     $("#tryAgain").on("click", function () {
