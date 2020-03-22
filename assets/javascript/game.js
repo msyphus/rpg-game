@@ -69,6 +69,7 @@ $(document).ready(function() {
         }
         $("#userChar").text(playerObj.name);
         $("#userImg").attr("src", playerObj.image);
+        $("#userImg").show();
         $("#userQuote").text(playerObj.quote);
         $("#userHealth").text(`Health: ${playerObj.health}`);
         userChosen = true;
@@ -90,6 +91,7 @@ $(document).ready(function() {
         }
         $("#chalChar").text(cpuObj.name);
         $("#chalImg").attr("src", cpuObj.image);
+        $("#chalImg").show();
         $("#chalQuote").text(cpuObj.quote);
         $("#chalHealth").text(`Health: ${cpuObj.health}`);
         $("#userFightInfo").text("");
@@ -111,7 +113,6 @@ $(document).ready(function() {
     });
     
     function fight() {
-        console.log(playerObj.attack);
         playerObj.health -= cpuObj.counter;
         $("#userHealth").text(`Health: ${playerObj.health}`);
         cpuObj.health -= playerObj.attack;
@@ -140,8 +141,6 @@ $(document).ready(function() {
 
     function retry () {
         location.reload(true);
-        //$(".characterCard").empty();
-        //$(".disabled").attr("class", "opponentCard");
     }
     
     $("#tryAgain").on("click", function () {
