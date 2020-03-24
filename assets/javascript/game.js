@@ -1,10 +1,10 @@
 var gato = {
     name: "Gato",
     image: "assets/images/gato.JPG",
-    health: 120,
+    health: 110,
     attack: 10,
     powerGain: 10,
-    counter: 15,
+    counter: 18,
     quote: "Welcome to my jungle; I've got fun and games!",
     attackQuote: "Benção!"
 }
@@ -12,7 +12,7 @@ var gato = {
 var rock = {
     name: "Rock Norris",
     image: "assets/images/karate.jpg",
-    health: 130,
+    health: 120,
     attack: 12,
     powerGain: 12,
     counter: 20,
@@ -23,7 +23,7 @@ var rock = {
 var crane = {
     name: "Crane",
     image: "assets/images/crane.jpg",
-    health: 150,
+    health: 130,
     attack: 15,
     powerGain: 15,
     counter: 25,
@@ -37,7 +37,7 @@ var kama = {
     health: 100,
     attack: 10,
     powerGain: 10,
-    counter: 10,
+    counter: 15,
     quote: "Did you see that?...No?...My point exactly!",
     attackQuote: "Ippon!"
 }
@@ -138,6 +138,7 @@ $(document).ready(function() {
                 $("#userFightInfo").append("You Win!" + "<br>" + "Select New Challenger");
                 $("#chalFightInfo").text("Vanquished!");
                 $(".opponentCard").off("click", false);
+                cpuChosen = false;
             } else {
                 $("#userFightInfo").text("");
                 $("#attack").hide();

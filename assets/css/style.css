@@ -29,10 +29,6 @@ h2{
     padding: 1%;
 }
 
-p {
-    font-family: 'Yeon Sung', cursive;
-}
-
 .characterTitles {
     margin:1% 0;
 }
@@ -79,7 +75,8 @@ p {
 }
 
 #userChar, #chalChar {
-    font-family: 'Acme', sans-serif;
+    /*font-family: 'Acme', sans-serif;*/
+    font-family: 'Shojumaru', cursive;
     font-size: 1.5em;
     color: red;
     text-align: center;
@@ -141,16 +138,19 @@ button {
     position: relative;
     display: inline;
     float: left;
-    position: relative;
     width: 200px;
-    height: 200px;
+    height: 220px;
     background-color: rgba(0,0,0,0.80);
     margin: 0.5%;
 }
 
+.opponentNameSpace {
+    height: 20%;
+}
+
 #kamaName, #craneName, #rockName, #gatoName {
-    font-family: 'Acme', sans-serif;
-    font-size: 1.5em;
+    font-family: 'Shojumaru', cursive;
+    font-size: 1.25em;
     color: red;
     text-align: center;
     padding-top: 5%;
@@ -159,6 +159,14 @@ button {
 #kamaImg, #craneImg, #rockImg, #gatoImg {
     position: absolute;
     width: 80%;
-    height: 75%;
+    height: 65%;
+    margin-left: 10%;
+}
+
+.health {
+    color: red;
+    font-family: 'Acme', sans-serif;
+    text-align: center;
+    margin-top: 75%;
 }
 
