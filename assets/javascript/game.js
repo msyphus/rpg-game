@@ -13,8 +13,8 @@ var rock = {
     name: "Rock Norris",
     image: "assets/images/karate.jpg",
     health: 130,
-    attack: 15,
-    powerGain: 15,
+    attack: 12,
+    powerGain: 12,
     counter: 20,
     quote: "Seriously?! Do I look like a guy you'd want to mess with?",
     attackQuote: "My dad is Chuck!"
@@ -24,8 +24,8 @@ var crane = {
     name: "Crane",
     image: "assets/images/crane.jpg",
     health: 150,
-    attack: 25,
-    powerGain: 25,
+    attack: 15,
+    powerGain: 15,
     counter: 25,
     quote: "Forget the Karate Kid, I invented the crane kick!",
     attackQuote: "I can beat you standing on one foot!"
@@ -35,8 +35,8 @@ var kama = {
     name: "Kamaitachi",
     image: "assets/images/ninja.jpg",
     health: 100,
-    attack: 6,
-    powerGain: 6,
+    attack: 10,
+    powerGain: 10,
     counter: 10,
     quote: "Did you see that?...No?...My point exactly!",
     attackQuote: "Ippon!"
@@ -113,10 +113,14 @@ $(document).ready(function() {
     });
     
     function fight() {
+        $("#userFightInfo").text("");
+        $("#chalFightInfo").text("");
         playerObj.health -= cpuObj.counter;
         $("#userHealth").text(`Health: ${playerObj.health}`);
+        $("#userFightInfo").append(playerObj.attackQuote + "<br>" + `${cpuObj.name} loses ${playerObj.attack} health points.`);
         cpuObj.health -= playerObj.attack;
         $("#chalHealth").text(`Health: ${cpuObj.health}`);
+        $("#chalFightInfo").append(cpuObj.attackQuote + "<br>" + `${playerObj.name} loses ${cpuObj.counter} health points.`)
         playerObj.attack = playerObj.attack + playerObj.powerGain;
         if(playerObj.health <= 0) {
             $("#attack").hide();
@@ -128,12 +132,14 @@ $(document).ready(function() {
             charDead.push(cpu);
             charDisable();
             if(charDead.length < 3) {
+                $("#userFightInfo").text("");
                 $("#attack").hide();
                 $("#startGame").show();
                 $("#userFightInfo").append("You Win!" + "<br>" + "Select New Challenger");
                 $("#chalFightInfo").text("Vanquished!");
                 $(".opponentCard").off("click", false);
             } else {
+                $("#userFightInfo").text("");
                 $("#attack").hide();
                 $("#tryAgain").show();
                 $("#userFightInfo").append("You are the Grand Champion!" + "<br>" + "Fight Again!")
