@@ -140,6 +140,15 @@ $(document).ready(function() {
                 $("#chalFightInfo").text("Vanquished!");
             }
         }
+        if(cpuObj.health <= 0 && playerObj.health <= 0) {
+            $("#attack").hide();
+            $("#tryAgain").show();
+            $("#startGame").hide();
+            $("#userFightInfo").text("Double KO!");
+            $("#chalFightInfo").text("Double KO!");
+            $(".opponentCard").on("click", false);
+           
+        }
     };
 
     $("#attack").on("click", function() {
