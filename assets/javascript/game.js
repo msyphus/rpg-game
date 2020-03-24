@@ -1,6 +1,7 @@
 var gato = {
     name: "Gato",
     image: "assets/images/gato.JPG",
+    bg: "assets/images/gatoBg.jpg",
     health: 110,
     attack: 10,
     powerGain: 10,
@@ -12,6 +13,7 @@ var gato = {
 var rock = {
     name: "Rock Norris",
     image: "assets/images/karate.jpg",
+    bg: "assets/images/karateBg.jpg",
     health: 120,
     attack: 12,
     powerGain: 12,
@@ -23,6 +25,7 @@ var rock = {
 var crane = {
     name: "Crane",
     image: "assets/images/crane.jpg",
+    bg: "assets/images/craneBg1.jpg",
     health: 130,
     attack: 15,
     powerGain: 15,
@@ -34,9 +37,10 @@ var crane = {
 var kama = {
     name: "Kamaitachi",
     image: "assets/images/ninja.jpg",
+    bg: "assets/images/ninjaBg.jpg",
     health: 100,
-    attack: 10,
-    powerGain: 10,
+    attack: 20,
+    powerGain: 20,
     counter: 15,
     quote: "Did you see that?...No?...My point exactly!",
     attackQuote: "Ippon!"
@@ -53,7 +57,6 @@ var charDead = [];
 $(document).ready(function() {
     $(this).on("click", ".opponentCard", function(event) {
         if(userChosen === false) {
-        
         player = event.currentTarget.attributes.value.value;
         if(player === "kama") {
             playerObj = kama;
@@ -67,13 +70,14 @@ $(document).ready(function() {
         if(player === "gato") {
             playerObj = gato;
         }
+        $("body").css("background-image", `url(${playerObj.bg})`);
         $("#userChar").text(playerObj.name);
         $("#userImg").attr("src", playerObj.image);
         $("#userImg").show();
         $("#userQuote").text(playerObj.quote);
         $("#userHealth").text(`Health: ${playerObj.health}`);
         userChosen = true;
-        $(this).on("click", false); //disable clicking on what has been selected
+        $(this).on("click", false);
         $(this).attr("class","disabled");
     } else {
         cpu = event.currentTarget.attributes.value.value;
@@ -185,15 +189,3 @@ $(document).ready(function() {
         }
     }
 })
-
-//Choose opponent by clicking picture, opponent hidden from lineup and displays in challengerWindow
-
-//Click attack button = user damages challenger (challenger loses health points).  Update points display and fight dialogue
-//opponent automatically counter attacks damaging user. Display points and fight dialogue
-//user attack starts at x then increases by x every attack -- user does not counterattack.  opponent only counterattacks
-//counterattacks do not change value
-
-//If challenger health <=0: challengerWindow empties, challenger displayed 50% opacity or greyscale in lineup. Victory message
-//in fight dialogue.  User health does not change. Choose another opponent, etc. until all opponents defeated = Champion!
-//If user health <=0: game over message in fight dialogue, userWindow 50% opacity or greyscale
-
